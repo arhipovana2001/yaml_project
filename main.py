@@ -4,9 +4,9 @@ def decorated(func):
     import yaml
 
     @functools.wraps(func)
-    def wrapped(*args):
+    def wrapped(*args, **kwargs):
         """function shows information on the screen in yaml format"""
-        result = func(*args)
+        result = func(*args, **kwargs)
         result = yaml.dump(result)
         return result
 
